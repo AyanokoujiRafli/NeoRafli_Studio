@@ -332,8 +332,126 @@ window.addEventListener('scroll', revealOnScroll);
   .sticky-order{ display:none; }
 }
 </style>
+<!-- ===============================
+ PREMIUM ADD-ON SCRIPT
+ Neo Rafli Studio
+ =============================== -->
+
+<!-- WA FLOATING -->
+<a href="https://wa.me/6287875164038" class="wa-float" target="_blank">💬</a>
+
+<!-- STICKY ORDER (MOBILE) -->
+<a href="#produk" class="sticky-order">Pesan Sekarang</a>
+
+<!-- SOCIAL PROOF -->
+<div class="social-proof" id="socialProof">
+  Seseorang baru saja memesan Joki Tugas
+</div>
+
+<!-- FAQ -->
+<section class="faq-addon">
+  <h2>FAQ</h2>
+  <p><b>Revisi?</b><br>Gratis 1x revisi</p>
+  <p><b>Pembayaran?</b><br>DP / Full di awal</p>
+  <p><b>Deadline mepet?</b><br>Bisa, chat admin</p>
+</section>
+
+<style>
+/* PAGE TRANSITION */
+body{animation:pageFade .6s ease}
+@keyframes pageFade{from{opacity:0}to{opacity:1}}
+
+/* WA FLOAT */
+.wa-float{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  width:56px;height:56px;
+  background:#25D366;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  box-shadow:0 12px 28px rgba(37,211,102,.45);
+  z-index:9999;
+  animation:pulse 1.8s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
+  70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
+/* STICKY ORDER */
+.sticky-order{
+  position:fixed;
+  bottom:0;left:0;
+  width:100%;
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+  font-weight:700;
+  text-decoration:none;
+  z-index:9998;
+}
+@media(min-width:768px){
+  .sticky-order{display:none}
+}
+
+/* SOCIAL PROOF */
+.social-proof{
+  position:fixed;
+  left:20px;
+  bottom:100px;
+  background:#fff;
+  padding:12px 16px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  font-size:13px;
+  opacity:0;
+  transition:.4s;
+  z-index:9997;
+}
+
+/* FAQ */
+.faq-addon{
+  margin:60px auto;
+  max-width:900px;
+  background:#f8f9fb;
+  padding:30px;
+  border-radius:18px;
+}
+.faq-addon h2{margin-bottom:14px}
+.faq-addon p{margin-bottom:10px}
+
+/* PRICE ENHANCER (AMAN) */
+.old-price{text-decoration:line-through;color:#999;font-size:13px}
+.save{color:#25D366;font-size:12px;font-weight:600}
+</style>
+
+<script>
+/* SOCIAL PROOF LOOP */
+const messages=[
+ "Seseorang baru saja memesan Joki Tugas",
+ "Seseorang memesan Paket Video + PPT",
+ "Order baru untuk Poster",
+ "Pesanan masuk untuk Editing Video"
+];
+let i=0;
+setInterval(()=>{
+  const box=document.getElementById("socialProof");
+  box.innerText=messages[i%messages.length];
+  box.style.opacity=1;
+  setTimeout(()=>box.style.opacity=0,4000);
+  i++;
+},6000);
+</script>
 </body>
 </html>
+
 
 
 
