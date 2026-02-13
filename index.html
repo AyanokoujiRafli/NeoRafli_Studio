@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>NeoRafli Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">NRS</div>
+    <h1>NeoRafli Studio</h1>
+    <p>Solusi Cepat Tugas & Konten Digital</p>
+</header>
+
+<section class="services">
+    <div class="card">
+        <h3>Edit Video</h3>
+        <p>Rp 20.000</p>
+        <button onclick="pilihJasa('Edit Video', 20000)">Pilih</button>
+    </div>
+
+    <div class="card">
+        <h3>PPT</h3>
+        <p>Rp 20.000</p>
+        <button onclick="pilihJasa('PPT', 20000)">Pilih</button>
+    </div>
+
+    <div class="card">
+        <h3>Joki Tugas</h3>
+        <p>Rp 15.000</p>
+        <button onclick="pilihJasa('Joki Tugas', 15000)">Pilih</button>
+    </div>
+
+    <div class="card">
+        <h3>Poster</h3>
+        <p>Rp 10.000</p>
+        <button onclick="pilihJasa('Poster', 10000)">Pilih</button>
+    </div>
+</section>
+
+<h2 class="paket-title">🎁 Paket Hemat</h2>
+
+<section class="services">
+    <div class="card paket">
+        <h3>Video + PPT</h3>
+        <p>Rp 35.000</p>
+        <button onclick="pilihJasa('Paket Video + PPT', 35000)">Pilih</button>
+    </div>
+
+    <div class="card paket">
+        <h3>Video + PPT + Joki</h3>
+        <p>Rp 45.000</p>
+        <button onclick="pilihJasa('Paket Video + PPT + Joki', 45000)">Pilih</button>
+    </div>
+
+    <div class="card paket">
+        <h3>Poster + Joki</h3>
+        <p>Rp 20.000</p>
+        <button onclick="pilihJasa('Paket Poster + Joki', 20000)">Pilih</button>
+    </div>
+</section>
+
+<section class="order">
+    <h2>Form Pemesanan</h2>
+
+    <input type="text" id="nama" placeholder="Nama Anda">
+    <textarea id="catatan" placeholder="Catatan order (deadline, detail, dll)"></textarea>
+
+    <button class="wa" onclick="kirimWA()">Pesan via WhatsApp</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
