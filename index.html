@@ -1,115 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-    <title>NeoRafli Studio</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Neo Rafli Studio</title>
 </head>
 <body>
 
-<header>
- <img src="logo.jpeg" alt="Neo Rafli Studio" class="logo-img">
-  <div class="logo">NRS</div>
-    <h1>NeoRafli Studio</h1>
-    <p>Solusi Cepat Tugas & Konten Digital</p>
-</header>
+  <h1>Pilih Jasa</h1>
 
-<section class="services">
-    <div class="card">
-        <h3>Edit Video</h3>
-        <p>Rp 20.000</p>
-        <button onclick="pilihJasa('Edit Video', 20000)">Pilih</button>
-    </div>
+  <button type="button" onclick="order('Joki Tugas', '15000')">
+    Joki Tugas – Rp15.000
+  </button>
 
-    <div class="card">
-        <h3>PPT</h3>
-        <p>Rp 20.000</p>
-        <button onclick="pilihJasa('PPT', 20000)">Pilih</button>
-    </div>
+  <br><br>
 
-    <div class="card">
-        <h3>Joki Tugas</h3>
-        <p>Rp 15.000</p>
-        <button onclick="pilihJasa('Joki Tugas', 15000)">Pilih</button>
-    </div>
+  <button type="button" onclick="order('Edit Video', '20000')">
+    Edit Video – Rp20.000
+  </button>
 
-    <div class="card">
-        <h3>Poster</h3>
-        <p>Rp 10.000</p>
-        <button onclick="pilihJasa('Poster', 10000)">Pilih</button>
-    </div>
-</section>
+  <script>
+    function order(produk, harga){
+      window.location.href =
+        "order.html?produk=" + encodeURIComponent(produk) +
+        "&harga=" + encodeURIComponent(harga);
+    }
+  </script>
 
-<h2 class="paket-title">🎁 Paket Hemat</h2>
-
-<section class="services">
-    <div class="card paket">
-        <h3>Video + PPT</h3>
-        <p>Rp 35.000</p>
-        <button onclick="pilihJasa('Paket Video + PPT', 35000)">Pilih</button>
-    </div>
-
-    <div class="card paket">
-        <h3>Video + PPT + Joki</h3>
-        <p>Rp 45.000</p>
-        <button onclick="pilihJasa('Paket Video + PPT + Joki', 45000)">Pilih</button>
-    </div>
-
-    <div class="card paket">
-        <h3>Poster + Joki</h3>
-        <p>Rp 20.000</p>
-        <button onclick="pilihJasa('Paket Poster + Joki', 20000)">Pilih</button>
-    </div>
-</section>
-
-<section class="testimoni">
-  <h2>Apa Kata Pelanggan</h2>
-
-  <div class="testi-card">
-    ⭐⭐⭐⭐⭐
-    <p>“PPT rapi, cepat, dan sesuai request. Recommended!”</p>
-    <span>— Pelanggan</span>
-  </div>
-
-  <div class="testi-card">
-    ⭐⭐⭐⭐⭐
-    <p>“Deadline mepet tapi kelar. Admin fast respon.”</p>
-    <span>— Pelanggan</span>
- <div class="card paket rekomendasi">
-  <div class="badge">⭐ Rekomendasi</div>
-  <h3>Video + PPT + Joki</h3>
-  <p>Rp 45.000</p>
-  <button onclick="pilihJasa('Paket Video + PPT + Joki', 45000)">Pilih</button>
-</div>
- </div>
-</section>
-<section class="order">
-    <h2>Form Pemesanan</h2>
-
-    <input type="text" id="nama" placeholder="Nama Anda">
-    <textarea id="catatan" placeholder="Catatan order (deadline, detail, dll)"></textarea>
-
-    <button class="wa" onclick="kirimWA()">Pesan via WhatsApp</button>
-</section>
-
-<script src="script.js"></script>
-<a href="https://wa.me/6287875164038" class="wa-float" target="_blank" aria-label="Chat WhatsApp">
-  💬
-</a>
-<script>
-function order(nama, harga){
-  window.location.href = 
-    "order.html?produk=" + encodeURIComponent(nama) +
-    "&harga=" + encodeURIComponent(harga);
-}
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
