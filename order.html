@@ -3,53 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <title>Form Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f4f6f8;
+    }
+    .container{
+      max-width:500px;
+      margin:40px auto;
+      background:#fff;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+    }
+    label{
+      font-size:14px;
+      font-weight:bold;
+    }
+    input, textarea{
+      width:100%;
+      padding:10px;
+      margin-top:6px;
+      margin-bottom:15px;
+      border-radius:8px;
+      border:1px solid #ccc;
+    }
+    button{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:8px;
+      background:#25D366;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+    }
+    button:hover{
+      opacity:0.9;
+    }
+  </style>
 </head>
 <body>
 
+<div class="container">
   <h2>Form Pemesanan</h2>
 
   <form onsubmit="kirimWA(); return false;">
-    <label>Nama:</label><br>
-    <input type="text" id="nama" required><br><br>
+    <label>Nama</label>
+    <input type="text" id="nama" required>
 
-    <label>Produk:</label><br>
-    <input type="text" id="produk" readonly><br><br>
+    <label>Produk</label>
+    <input type="text" id="produk" readonly>
 
-    <label>Harga:</label><br>
-    <input type="text" id="harga" readonly><br><br>
+    <label>Harga</label>
+    <input type="text" id="harga" readonly>
 
-    <label>Catatan:</label><br>
-    <textarea id="catatan"></textarea><br><br>
+    <label>Catatan Order</label>
+    <textarea id="catatan" rows="4"></textarea>
 
     <button type="submit">Kirim ke WhatsApp</button>
   </form>
+</div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    document.getElementById("produk").value = params.get("produk");
-    document.getElementById("harga").value = "Rp" + params.get("harga");
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("produk").value = params.get("produk");
+  document.getElementById("harga").value = "Rp" + params.get("harga");
 
-    function kirimWA(){
-      const nama = document.getElementById("nama").value;
-      const produk = document.getElementById("produk").value;
-      const harga = document.getElementById("harga").value;
-      const catatan = document.getElementById("catatan").value;
+  function kirimWA(){
+    const nama = document.getElementById("nama").value;
+    const produk = document.getElementById("produk").value;
+    const harga = document.getElementById("harga").value;
+    const catatan = document.getElementById("catatan").value;
 
-      const noWA = "6287875164038";
+    const noWA = "6287875164038";
 
-      const pesan =
+    const pesan =
 `Halo Admin Neo Rafli Studio 👋
 Nama: ${nama}
 Produk: ${produk}
 Harga: ${harga}
 Catatan: ${catatan}`;
 
-      window.open(
-        "https://wa.me/" + noWA + "?text=" + encodeURIComponent(pesan),
-        "_blank"
-      );
-    }
-  </script>
+    window.open(
+      "https://wa.me/" + noWA + "?text=" + encodeURIComponent(pesan),
+      "_blank"
+    );
+  }
+</script>
 
 </body>
 </html>
