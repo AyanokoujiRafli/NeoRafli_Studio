@@ -312,8 +312,29 @@ window.addEventListener('scroll', revealOnScroll);
     100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
   }
 </style>
+<a href="#produk" class="sticky-order">Pesan Sekarang</a>
+
+<style>
+.sticky-order{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#25D366;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+  font-weight:700;
+  text-decoration:none;
+  z-index:9998;
+}
+@media(min-width:768px){
+  .sticky-order{ display:none; }
+}
+</style>
 </body>
 </html>
+
 
 
 
