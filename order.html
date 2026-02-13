@@ -2,46 +2,51 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Form Order</title>
+  <title>Form Pemesanan | Neo Rafli Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body{
       margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:#f4f6f8;
+      font-family:'Segoe UI', Arial, sans-serif;
+      background:#f2f4f8;
     }
-    .container{
-      max-width:500px;
-      margin:40px auto;
+    .box{
+      max-width:520px;
+      margin:60px auto;
       background:#fff;
-      padding:25px;
-      border-radius:12px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      padding:30px;
+      border-radius:18px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.1);
     }
     h2{
       text-align:center;
-      margin-bottom:20px;
+      margin-bottom:25px;
     }
     label{
+      font-weight:600;
       font-size:14px;
-      font-weight:bold;
     }
     input, textarea{
       width:100%;
-      padding:10px;
+      padding:12px;
       margin-top:6px;
-      margin-bottom:15px;
-      border-radius:8px;
+      margin-bottom:16px;
+      border-radius:10px;
       border:1px solid #ccc;
+      font-size:14px;
+    }
+    textarea{
+      resize:none;
     }
     button{
       width:100%;
-      padding:12px;
+      padding:14px;
       border:none;
-      border-radius:8px;
+      border-radius:12px;
       background:#25D366;
-      color:white;
+      color:#fff;
       font-size:16px;
+      font-weight:600;
       cursor:pointer;
     }
     button:hover{
@@ -51,9 +56,8 @@
 </head>
 <body>
 
-<div class="container">
+<div class="box">
   <h2>Form Pemesanan</h2>
-
   <form onsubmit="kirimWA(); return false;">
     <label>Nama</label>
     <input type="text" id="nama" required>
@@ -81,7 +85,6 @@
     const produk = document.getElementById("produk").value;
     const harga = document.getElementById("harga").value;
     const catatan = document.getElementById("catatan").value;
-
     const noWA = "6287875164038";
 
     const pesan =
