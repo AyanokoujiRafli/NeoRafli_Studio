@@ -86,4 +86,12 @@ button:hover {
   z-index: 999;
 }
 .wa-float:hover{ background:#1ebe5d; }
+@media (max-width: 600px){
+  header{ padding: 28px 16px; }
+  .services{ padding: 16px; gap: 14px; }
+  .card{ padding: 16px; }
+  button{ padding: 12px; font-size: 15px; }
+  .order{ margin: 16px; padding: 20px; }
+}
+
 
