@@ -4,87 +4,144 @@
   <meta charset="UTF-8">
   <title>Form Pemesanan | Neo Rafli Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body{
       margin:0;
       font-family:'Segoe UI', Arial, sans-serif;
       background:#f2f4f8;
+      color:#222;
     }
-    .box{
+
+    .container{
       max-width:520px;
       margin:60px auto;
-      background:#fff;
       padding:30px;
-      border-radius:18px;
-      box-shadow:0 15px 40px rgba(0,0,0,0.1);
+      background:#ffffff;
+      border-radius:20px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.12);
+      animation:fadeUp 0.8s ease forwards;
     }
+
+    @keyframes fadeUp{
+      from{opacity:0; transform:translateY(40px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
     h2{
       text-align:center;
       margin-bottom:25px;
     }
+
+    .info{
+      text-align:center;
+      font-size:13px;
+      color:#666;
+      margin-bottom:20px;
+    }
+
     label{
       font-weight:600;
       font-size:14px;
     }
+
     input, textarea{
       width:100%;
       padding:12px;
       margin-top:6px;
       margin-bottom:16px;
-      border-radius:10px;
+      border-radius:12px;
       border:1px solid #ccc;
       font-size:14px;
+      outline:none;
+      transition:border 0.2s ease, box-shadow 0.2s ease;
     }
+
+    input:focus, textarea:focus{
+      border-color:#25D366;
+      box-shadow:0 0 0 3px rgba(37,211,102,0.15);
+    }
+
     textarea{
       resize:none;
     }
+
+    .readonly{
+      background:#f5f5f5;
+    }
+
     button{
       width:100%;
       padding:14px;
       border:none;
-      border-radius:12px;
+      border-radius:14px;
       background:#25D366;
       color:#fff;
       font-size:16px;
       font-weight:600;
       cursor:pointer;
+      transition:all 0.25s ease;
     }
+
     button:hover{
-      opacity:0.9;
+      transform:translateY(-2px);
+      box-shadow:0 10px 25px rgba(37,211,102,0.45);
+    }
+
+    .back{
+      margin-top:18px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    .back a{
+      color:#25D366;
+      text-decoration:none;
+      font-weight:600;
     }
   </style>
 </head>
 <body>
 
-<div class="box">
+<div class="container">
   <h2>Form Pemesanan</h2>
+  <p class="info">Silakan isi data di bawah ini untuk melanjutkan pesanan</p>
+
   <form onsubmit="kirimWA(); return false;">
     <label>Nama</label>
-    <input type="text" id="nama" required>
+    <input type="text" id="nama" placeholder="Masukkan nama kamu" required>
 
     <label>Produk</label>
-    <input type="text" id="produk" readonly>
+    <input type="text" id="produk" class="readonly" readonly>
 
     <label>Harga</label>
-    <input type="text" id="harga" readonly>
+    <input type="text" id="harga" class="readonly" readonly>
 
     <label>Catatan Order</label>
-    <textarea id="catatan" rows="4"></textarea>
+    <textarea id="catatan" rows="4" placeholder="Contoh: deadline, format, dll"></textarea>
 
-    <button type="submit">Kirim ke WhatsApp</button>
+    <button type="submit">Kirim Pesanan ke WhatsApp</button>
   </form>
+
+  <div class="back">
+    <a href="index.html">← Kembali pilih jasa</a>
+  </div>
 </div>
 
 <script>
+  // Ambil data dari URL
   const params = new URLSearchParams(window.location.search);
-  document.getElementById("produk").value = params.get("produk");
-  document.getElementById("harga").value = "Rp" + params.get("harga");
+  document.getElementById("produk").value = params.get("produk") || "-";
+  document.getElementById("harga").value = params.get("harga")
+    ? "Rp" + params.get("harga")
+    : "-";
 
   function kirimWA(){
     const nama = document.getElementById("nama").value;
     const produk = document.getElementById("produk").value;
     const harga = document.getElementById("harga").value;
     const catatan = document.getElementById("catatan").value;
+
     const noWA = "6287875164038";
 
     const pesan =
@@ -92,7 +149,7 @@
 Nama: ${nama}
 Produk: ${produk}
 Harga: ${harga}
-Catatan: ${catatan}`;
+Catatan: ${catatan || '-'}`;
 
     window.open(
       "https://wa.me/" + noWA + "?text=" + encodeURIComponent(pesan),
