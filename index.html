@@ -348,13 +348,124 @@ window.addEventListener('scroll', revealOnScroll);
   Seseorang baru saja memesan Joki Tugas
 </div>
 
-<!-- FAQ -->
-<section class="faq-addon">
-  <h2>FAQ</h2>
-  <p><b>Revisi?</b><br>Gratis 1x revisi</p>
-  <p><b>Pembayaran?</b><br>DP / Full di awal</p>
-  <p><b>Deadline mepet?</b><br>Bisa, chat admin</p>
+<!-- ===============================
+ PREMIUM FAQ SECTION
+ =============================== -->
+<section class="faq-premium">
+  <h2>Pertanyaan Umum</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Revisi berapa kali?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      Gratis 1x revisi untuk setiap order. Revisi tambahan bisa dibicarakan dengan admin.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Sistem pembayarannya bagaimana?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      Pembayaran dilakukan di awal (DP / full) sebelum pengerjaan dimulai.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Kalau deadline mepet bisa?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      Bisa. Silakan langsung chat admin melalui WhatsApp untuk konfirmasi ketersediaan.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      File dikirim lewat apa?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      File final akan dikirim melalui Google Drive / WhatsApp sesuai kebutuhan.
+    </div>
+  </div>
 </section>
+
+<style>
+/* FAQ PREMIUM */
+.faq-premium{
+  max-width:900px;
+  margin:70px auto;
+  padding:0 20px;
+}
+
+.faq-premium h2{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.faq-item{
+  background:#fff;
+  border-radius:16px;
+  margin-bottom:14px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  overflow:hidden;
+  transition:transform .2s ease;
+}
+
+.faq-item:hover{
+  transform:translateY(-2px);
+}
+
+.faq-question{
+  width:100%;
+  background:none;
+  border:none;
+  padding:18px 22px;
+  font-size:15px;
+  font-weight:600;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+.faq-question span{
+  font-size:22px;
+  transition:transform .3s ease;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 22px;
+  font-size:14px;
+  color:#555;
+  transition:max-height .4s ease, padding .3s ease;
+}
+
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding:0 22px 18px;
+}
+
+.faq-item.active .faq-question span{
+  transform:rotate(45deg);
+}
+</style>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const item = btn.parentElement;
+    item.classList.toggle("active");
+  });
+});
+</script>
 
 <style>
 /* PAGE TRANSITION */
@@ -451,6 +562,7 @@ setInterval(()=>{
 </script>
 </body>
 </html>
+
 
 
 
