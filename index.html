@@ -3,28 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <title>Neo Rafli Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f4f6f8;
+    }
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:20px;
+    }
+    header{
+      text-align:center;
+      margin-bottom:30px;
+    }
+    .logo{
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:10px;
+    }
+    h1{
+      margin:5px 0;
+    }
+    .subtitle{
+      color:#555;
+      font-size:14px;
+    }
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+    .card{
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    }
+    .card h3{
+      margin-top:0;
+    }
+    .price{
+      font-weight:bold;
+      margin:10px 0;
+    }
+    button{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:8px;
+      background:#25D366;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+    }
+    button:hover{
+      opacity:0.9;
+    }
+    .badge{
+      display:inline-block;
+      background:#ff9800;
+      color:white;
+      padding:3px 8px;
+      border-radius:6px;
+      font-size:12px;
+      margin-bottom:8px;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Pilih Jasa</h1>
+<div class="container">
+  <header>
+    <img src="logo.jpeg" alt="Neo Rafli Studio" class="logo">
+    <h1>Neo Rafli Studio</h1>
+    <p class="subtitle">Jasa Digital Cepat • Murah • Profesional</p>
+  </header>
 
-  <button type="button" onclick="order('Joki Tugas', '15000')">
-    Joki Tugas – Rp15.000
-  </button>
+  <div class="products">
 
-  <br><br>
+    <div class="card">
+      <h3>Joki Tugas</h3>
+      <p class="price">Rp15.000</p>
+      <button type="button" onclick="order('Joki Tugas','15000')">
+        Pesan Sekarang
+      </button>
+    </div>
 
-  <button type="button" onclick="order('Edit Video', '20000')">
-    Edit Video – Rp20.000
-  </button>
+    <div class="card">
+      <h3>Edit Video</h3>
+      <p class="price">Rp20.000</p>
+      <button type="button" onclick="order('Edit Video','20000')">
+        Pesan Sekarang
+      </button>
+    </div>
 
-  <script>
-    function order(produk, harga){
-      window.location.href =
-        "order.html?produk=" + encodeURIComponent(produk) +
-        "&harga=" + encodeURIComponent(harga);
-    }
-  </script>
+    <div class="card">
+      <span class="badge">Rekomendasi</span>
+      <h3>Paket Video + PPT + Joki</h3>
+      <p class="price">Rp45.000</p>
+      <button type="button" onclick="order('Paket Video + PPT + Joki','45000')">
+        Pesan Sekarang
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function order(produk, harga){
+    window.location.href =
+      "order.html?produk=" + encodeURIComponent(produk) +
+      "&harga=" + encodeURIComponent(harga);
+  }
+</script>
 
 </body>
 </html>
