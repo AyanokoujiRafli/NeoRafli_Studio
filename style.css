@@ -93,5 +93,20 @@ button:hover {
   button{ padding: 12px; font-size: 15px; }
   .order{ margin: 16px; padding: 20px; }
 }
+.testimoni{
+  padding: 30px;
+  text-align: center;
+}
+.testi-card{
+  background:#fff;
+  margin:12px auto;
+  max-width:520px;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.testi-card p{ margin:8px 0; }
+.testi-card span{ font-size:13px; color:#666; }
+
 
 
