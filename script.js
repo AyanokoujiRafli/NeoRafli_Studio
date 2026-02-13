@@ -8,18 +8,24 @@ function pilihJasa(jasa, harga) {
 }
 
 function kirimWA() {
-    const nama = document.getElementById("nama").value;
-    const catatan = document.getElementById("catatan").value;
+  const nama = document.getElementById("nama").value.trim();
+  const catatan = document.getElementById("catatan").value.trim();
 
-    const nomorWA = "6287875164038";
+  if(!nama || !jasaDipilih){
+    alert("Isi nama dan pilih jasa dulu ya 🙂");
+    return;
+  }
 
-    const pesan = 
-`Halo Admin Rafli Digital Service 👋
+  const nomorWA = "6287875164038";
+  const pesan =
+`Halo Admin *Neo Rafli Studio* 👋
 Nama: ${nama}
 Pesanan: ${jasaDipilih}
 Harga: Rp ${hargaDipilih}
-Catatan: ${catatan}`;
+Catatan: ${catatan || '-'}
 
-    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
-    window.open(url, "_blank");
+Mohon info proses & estimasi pengerjaan. Terima kasih 🙏`;
+
+  window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`, "_blank");
 }
+
