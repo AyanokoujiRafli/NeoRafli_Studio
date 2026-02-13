@@ -130,6 +130,13 @@ button:hover {
   object-fit:cover;  /* isi penuh tanpa gepeng */
   margin-bottom:10px;
 }
+@media (max-width:600px){
+  .logo-img{
+    width:60px;
+    height:60px;
+  }
+}
+
 
 
 
