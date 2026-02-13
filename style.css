@@ -123,6 +123,14 @@ button:hover {
   width:80px;
   margin-bottom:10px;
 }
+.logo-img{
+  width:70px;        /* ukuran logo */
+  height:70px;       /* wajib sama biar bulat */
+  border-radius:50%; /* bikin bulat */
+  object-fit:cover;  /* isi penuh tanpa gepeng */
+  margin-bottom:10px;
+}
+
 
 
 
