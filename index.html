@@ -2,170 +2,291 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<title>NeoRafli Studio</title>
+<!-- ========================= -->
+<!-- PRIMARY META -->
+<!-- ========================= -->
+<title>Neo Rafli Studio — Jasa Editing Video, PPT & Desain</title>
+<meta name="description" content="Neo Rafli Studio menyediakan jasa editing video, pembuatan PPT profesional, desain poster, dan joki tugas. Harga terjangkau, proses cepat, pesan langsung via WhatsApp.">
+<meta name="author" content="Neo Rafli Studio">
+<meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NeoRafli Studio - Pembayaran</title>
-<link rel="icon" href="logo.jpeg">
+<!-- ========================= -->
+<!-- OPEN GRAPH (WhatsApp, FB, IG) -->
+<!-- ========================= -->
+<meta property="og:site_name" content="Neo Rafli Studio">
+<meta property="og:title" content="Neo Rafli Studio | Jasa Editing Video, PPT & Desain">
+<meta property="og:description" content="Jasa Editing Video, PPT, Poster & Joki Tugas • Harga Mulai 10rb • Fast Response • Order via WhatsApp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ayanokoujirafli.github.io/NeoRafli_Studio/">
+<meta property="og:image" content="https://ayanokoujirafli.github.io/NeoRafli_Studio/logo.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- ========================= -->
+<!-- TWITTER CARD -->
+<!-- ========================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neo Rafli Studio">
+<meta name="twitter:description" content="Editing Video • PPT • Poster • Joki Tugas | Harga Terjangkau & Cepat">
+<meta name="twitter:image" content="https://ayanokoujirafli.github.io/NeoRafli_Studio/logo.jpeg">
+<!-- ========================= -->
+<!-- FAVICON (OPSIONAL TAPI PREMIUM) -->
+<!-- ========================= -->
+<link rel="icon" type="image/png" href="logo.jpeg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-/* ===== Reset & Basic ===== */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Arial, sans-serif;}
-body{background:#f2f4f8;color:#222;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;}
-.container{max-width:900px;margin:50px auto;padding:20px;}
-header{text-align:center;margin-bottom:40px;}
-header img{width:90px;height:90px;border-radius:50%;object-fit:cover;}
-header h1{font-size:28px;margin:10px 0;}
-.header-sub{color:#666;font-size:14px;}
-
-/* ===== Produk Card ===== */
-.product-card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,0.08);transition:all 0.3s;cursor:pointer;text-align:center;}
-.product-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(0,0,0,0.15);}
-.product-card img{width:60px;margin-bottom:10px;}
-.product-card h3{margin:10px 0;}
-.product-card p{font-weight:700;color:#25D366;}
-
-/* ===== Modal ===== */
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:1000;}
-.modal.active{display:flex;animation:fadeIn 0.4s;}
-.modal-content{background:#fff;padding:30px;border-radius:18px;width:90%;max-width:500px;position:relative;animation:slideDown 0.4s;}
-.modal-content h2{text-align:center;color:#25D366;margin-bottom:20px;}
-.modal-content label{display:block;margin:10px 0 5px;}
-.modal-content input, .modal-content select{width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;margin-bottom:10px;}
-.modal-content button{background:#25D366;color:#fff;border:none;padding:12px 20px;margin-top:10px;border-radius:12px;cursor:pointer;font-weight:600;transition:0.3s;width:100%;}
-.modal-content button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,0.45);}
-.modal-content #cancelBtn{background:#ff4b4b;}
-
-/* ===== E-Wallet Logos ===== */
-.ewallets{display:flex;justify-content:space-around;margin:15px 0;}
-.ewallets img{width:60px;height:60px;cursor:pointer;transition:0.3s;}
-.ewallets img:hover{transform:scale(1.1);}
-
-/* ===== Countdown ===== */
-#countdown{font-size:16px;color:#ff4b4b;text-align:center;margin:10px 0;transition:color 0.3s;}
-
-/* ===== Animasi ===== */
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes slideDown{from{transform:translateY(-30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+body{ margin:0; font-family:'Segoe UI', Arial, sans-serif; background:#f2f4f8; color:#222; }
+.container{ max-width:1100px; margin:auto; padding:30px 20px 60px; }
+/* HEADER */
+header{ text-align:center; margin-bottom:50px; }
+.logo{ width:90px; height:90px; border-radius:50%; object-fit:cover; box-shadow:0 8px 20px rgba(0,0,0,0.15); margin-bottom:15px; }
+h1{ margin:0; font-size:28px; }
+.subtitle{ margin-top:6px; color:#666; font-size:14px; }
+/* SECTION */
+.section-title{ text-align:center; margin:50px 0 25px; font-size:22px; }
+/* GRID */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
+/* CARD */
+.card{ background:#fff; border-radius:18px; padding:25px; box-shadow:0 12px 30px rgba(0,0,0,0.08); position:relative; transition:all 0.35s ease; }
+.card:hover{ transform:translateY(-10px); box-shadow:0 22px 45px rgba(0,0,0,0.15); }
+.badge{ position:absolute; top:18px; right:18px; background:#ff9800; color:#fff; padding:5px 12px; font-size:12px; border-radius:20px; }
+.card h3{ margin-top:0; }
+.desc{ font-size:14px; color:#555; margin:10px 0 18px; }
+.price{ font-size:20px; font-weight:700; color:#25D366; margin-bottom:18px; }
+button{ width:100%; padding:14px; border:none; border-radius:12px; background:#25D366; color:#fff; font-size:16px; font-weight:600; cursor:pointer; transition:all 0.25s ease; }
+button:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,211,102,0.45); }
+footer{ margin-top:60px; text-align:center; font-size:13px; color:#777; }
+/* ANIMASI */
+@keyframes fadeUp{ from{opacity:0; transform:translateY(40px);} to{opacity:1; transform:translateY(0);} }
+.reveal{ opacity:0; transform:translateY(40px); }
+.reveal.active{ animation:fadeUp 0.9s ease forwards; }
 </style>
 </head>
 <body>
-
 <div class="container">
-  <header>
-    <img src="logo.jpeg" alt="NeoRafli Studio">
-    <h1>NeoRafli Studio</h1>
-    <p class="header-sub">Premium Payment • Upload Bukti Transfer</p>
-  </header>
-
-  <!-- Produk -->
-  <div class="product-card" data-name="Edit Video" data-price="20000">
-    <img src="logo.jpeg" alt="Edit Video">
-    <h3>Edit Video</h3>
-    <p>Rp20.000</p>
-  </div>
-  <div class="product-card" data-name="PPT Presentasi" data-price="20000">
-    <img src="logo.jpeg" alt="PPT Presentasi">
-    <h3>PPT Presentasi</h3>
-    <p>Rp20.000</p>
-  </div>
-  <div class="product-card" data-name="Joki Tugas" data-price="15000">
-    <img src="logo.jpeg" alt="Joki Tugas">
-    <h3>Joki Tugas</h3>
-    <p>Rp15.000</p>
-  </div>
-  <div class="product-card" data-name="Poster / Desain" data-price="10000">
-    <img src="logo.jpeg" alt="Poster / Desain">
-    <h3>Poster / Desain</h3>
-    <p>Rp10.000</p>
-  </div>
+<header class="reveal">
+<img src="logo.jpeg" class="logo" alt="Neo Rafli Studio">
+<h1>Neo Rafli Studio</h1>
+<p class="subtitle">Jasa Digital • Cepat • Terjangkau • Profesional</p>
+</header>
+<h2 class="section-title reveal">Daftar Jasa</h2>
+<div class="grid">
+<div class="card reveal">
+<h3>Edit Video</h3>
+<p class="desc">Editing video rapi dan profesional.</p>
+<p class="price">Rp20.000</p>
+<button type="button" onclick="order('Edit Video','20000')">Pesan</button>
 </div>
-
-<!-- Modal Upload Bukti TF -->
-<div class="modal" id="paymentModal">
-  <div class="modal-content">
-    <h2>Upload Bukti Transfer</h2>
-    <label>Produk</label>
-    <input type="text" id="productName" readonly>
-    <label>Harga</label>
-    <input type="text" id="productPrice" readonly>
-    <label>Pilih E-Wallet</label>
-    <div class="ewallets">
-      <img src="dana.png" alt="Dana" data-method="Dana">
-      <img src="gopay.png" alt="GoPay" data-method="GoPay">
-      <img src="ovo.png" alt="OVO" data-method="OVO">
-    </div>
-    <label>Upload Foto Bukti TF</label>
-    <input type="file" id="buktiTF" accept="image/*">
-    <div id="countdown"></div>
-    <button id="confirmBtn">Konfirmasi & Kirim ke WA</button>
-    <button id="cancelBtn">Cancel</button>
-  </div>
+<div class="card reveal">
+<h3>PPT Presentasi</h3>
+<p class="desc">Desain PPT menarik dan enak dilihat.</p>
+<p class="price">Rp20.000</p>
+<button type="button" onclick="order('PPT Presentasi','20000')">Pesan</button>
 </div>
-
+<div class="card reveal">
+<h3>Joki Tugas</h3>
+<p class="desc">Bantu tugas cepat dan sesuai kebutuhan.</p>
+<p class="price">Rp15.000</p>
+<button type="button" onclick="order('Joki Tugas','15000')">Pesan</button>
+</div>
+<div class="card reveal">
+<h3>Poster / Desain</h3>
+<p class="desc">Poster simpel, bersih, dan menarik.</p>
+<p class="price">Rp10.000</p>
+<button type="button" onclick="order('Poster / Desain','10000')">Pesan</button>
+</div>
+</div>
+<h2 class="section-title reveal">Paket Hemat 🔥</h2>
+<div class="grid">
+<div class="card reveal">
+<span class="badge">Hemat 5K</span>
+<h3>Video + PPT</h3>
+<p class="desc">Paket combo paling laris.</p>
+<p class="price">Rp35.000</p>
+<button type="button" onclick="order('Paket Video + PPT','35000')">Pesan</button>
+</div>
+<div class="card reveal">
+<span class="badge">Hemat 10K</span>
+<h3>Video + PPT + Joki</h3>
+<p class="desc">Solusi lengkap tugas & konten.</p>
+<p class="price">Rp45.000</p>
+<button type="button" onclick="order('Paket Video + PPT + Joki','45000')">Pesan</button>
+</div>
+<div class="card reveal">
+<span class="badge">Hemat 5K</span>
+<h3>Poster + Joki</h3>
+<p class="desc">Desain dan tugas dalam satu paket.</p>
+<p class="price">Rp20.000</p>
+<button type="button" onclick="order('Paket Poster + Joki','20000')">Pesan</button>
+</div>
+</div>
+<footer>
+© 2026 Neo Rafli Studio • Order via WhatsApp
+</footer>
+</div>
 <script>
-const productCards = document.querySelectorAll('.product-card');
-const modal = document.getElementById('paymentModal');
-const productNameInput = document.getElementById('productName');
-const productPriceInput = document.getElementById('productPrice');
-const confirmBtn = document.getElementById('confirmBtn');
-const cancelBtn = document.getElementById('cancelBtn');
-const buktiTF = document.getElementById('buktiTF');
-const countdownEl = document.getElementById('countdown');
-let countdownInterval;
-let selectedMethod = '';
-
-// Pilih produk
-productCards.forEach(p => {
-  p.addEventListener('click', ()=>{
-    productNameInput.value = p.dataset.name;
-    productPriceInput.value = p.dataset.price;
-    modal.classList.add('active');
-  });
+function order(produk, harga){
+window.location.href = "order.html?produk=" + encodeURIComponent(produk) + "&harga=" + encodeURIComponent(harga);
+}
+/* SCROLL ANIMATION */
+function revealOnScroll(){
+document.querySelectorAll('.reveal').forEach(el=>{
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 80){
+el.classList.add('active');
+}
 });
-
-// Pilih E-wallet
-document.querySelectorAll('.ewallets img').forEach(img=>{
-  img.addEventListener('click',()=>{
-    selectedMethod = img.dataset.method;
-    alert('Metode pembayaran: '+selectedMethod+' dipilih. Silakan upload bukti TF.');
-  });
+}
+window.addEventListener('load', revealOnScroll);
+window.addEventListener('scroll', revealOnScroll);
+</script>
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/6287875164038" class="wa-float" target="_blank" aria-label="Chat WhatsApp">
+💬
+</a>
+<style>
+.wa-float{
+position:fixed;
+bottom:22px;
+right:22px;
+width:58px;
+height:58px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+text-decoration:none;
+box-shadow:0 12px 28px rgba(37,211,102,0.5);
+z-index:9999;
+animation:waPulse 1.8s infinite;
+transition:transform 0.2s ease;
+}
+.wa-float:hover{ transform:scale(1.1); }
+@keyframes waPulse{ 0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);} 70%{box-shadow:0 0 0 18px rgba(37,211,102,0);} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+</style>
+<a href="#produk" class="sticky-order">Pesan Sekarang</a>
+<style>
+.sticky-order{
+position:fixed;
+bottom:0; left:0; width:100%;
+background:#25D366;
+color:#fff;
+text-align:center;
+padding:14px;
+font-weight:700;
+text-decoration:none;
+z-index:9998;
+}
+@media(min-width:768px){ .sticky-order{ display:none; } }
+</style>
+<!-- =============================== PREMIUM ADD-ON SCRIPT Neo Rafli Studio =============================== -->
+<!-- WA FLOATING -->
+<a href="https://wa.me/6287875164038" class="wa-float" target="_blank">💬</a>
+<!-- STICKY ORDER (MOBILE) -->
+<a href="#produk" class="sticky-order">Pesan Sekarang</a>
+<!-- SOCIAL PROOF -->
+<div class="social-proof" id="socialProof">
+Seseorang baru saja memesan Joki Tugas
+</div>
+<!-- =============================== PREMIUM FAQ SECTION =============================== -->
+<section class="faq-premium">
+<h2>Pertanyaan Umum</h2>
+<div class="faq-item">
+<button class="faq-question">
+Revisi berapa kali?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Gratis 1x revisi untuk setiap order. Revisi tambahan bisa dibicarakan dengan admin.
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+Sistem pembayarannya bagaimana?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Pembayaran dilakukan di awal (DP / full) sebelum pengerjaan dimulai.
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+Kalau deadline mepet bisa?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Bisa. Silakan langsung chat admin melalui WhatsApp untuk konfirmasi ketersediaan.
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+File dikirim lewat apa?
+<span>+</span>
+</button>
+<div class="faq-answer">
+File final akan dikirim melalui Google Drive / WhatsApp sesuai kebutuhan.
+</div>
+</div>
+</section>
+<style>
+/* FAQ PREMIUM */
+.faq-premium{ max-width:900px; margin:70px auto; padding:0 20px; }
+.faq-premium h2{ text-align:center; margin-bottom:30px; }
+.faq-item{ background:#fff; border-radius:16px; margin-bottom:14px; box-shadow:0 8px 30px rgba(0,0,0,0.08); overflow:hidden; transition:transform .2s ease; }
+.faq-item:hover{ transform:translateY(-2px); }
+.faq-question{ width:100%; background:none; border:none; padding:18px 22px; font-size:15px; font-weight:600; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+.faq-question span{ font-size:22px; transition:transform .3s ease; }
+.faq-answer{ max-height:0; overflow:hidden; padding:0 22px; font-size:14px; color:#555; transition:max-height .4s ease, padding .3s ease; }
+.faq-item.active .faq-answer{ max-height:200px; padding:0 22px 18px; }
+.faq-item.active .faq-question span{ transform:rotate(45deg); }
+</style>
+<script>
+document.querySelectorAll(".faq-question").forEach(btn=>{
+btn.addEventListener("click",()=>{
+const item = btn.parentElement;
+item.classList.toggle("active");
 });
-
-// Konfirmasi pembayaran
-confirmBtn.addEventListener('click',()=>{
-  if(!buktiTF.files.length){ alert('Upload bukti transfer dulu!'); return; }
-  if(!selectedMethod){ alert('Pilih metode e-wallet!'); return; }
-
-  // Mulai countdown 10 menit
-  let timeLeft = 10*60;
-  countdownEl.textContent = `Waktu pembayaran: 10:00`;
-  countdownEl.style.color = '#ff4b4b';
-
-  clearInterval(countdownInterval);
-  countdownInterval = setInterval(()=>{
-    let minutes = Math.floor(timeLeft/60);
-    let seconds = timeLeft % 60;
-    countdownEl.textContent = `Waktu pembayaran: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-    if(timeLeft<=60) countdownEl.style.color='#ff9900';
-    timeLeft--;
-    if(timeLeft<0){ clearInterval(countdownInterval); alert('Waktu habis!'); modal.classList.remove('active'); }
-  },1000);
-
-  // Simulasi upload berhasil → langsung redirect ke WA
-  setTimeout(()=>{
-    const name = prompt('Masukkan nama Anda:','Customer');
-    const waURL = `https://wa.me/087875164038?text=${encodeURIComponent('Halo, saya sudah bayar:\nNama: '+name+'\nProduk: '+productNameInput.value+'\nHarga: '+productPriceInput.value+'\nMetode: '+selectedMethod)}`;
-    window.open(waURL,'_blank');
-    modal.classList.remove('active');
-    clearInterval(countdownInterval);
-  },2000);
-});
-
-// Cancel
-cancelBtn.addEventListener('click',()=>{
-  modal.classList.remove('active');
-  clearInterval(countdownInterval);
 });
 </script>
-
+<style>
+/* PAGE TRANSITION */
+body{animation:pageFade .6s ease}
+@keyframes pageFade{from{opacity:0}to{opacity:1}}
+/* WA FLOAT */
+.wa-float{ position:fixed; bottom:22px; right:22px; width:56px;height:56px; background:#25D366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 12px 28px rgba(37,211,102,.45); z-index:9999; animation:pulse 1.8s infinite; }
+@keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)} 70%{box-shadow:0 0 0 18px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+/* STICKY ORDER */
+.sticky-order{ position:fixed; bottom:0;left:0; width:100%; background:#111; color:#fff; text-align:center; padding:14px; font-weight:700; text-decoration:none; z-index:9998; }
+@media(min-width:768px){ .sticky-order{display:none} }
+/* SOCIAL PROOF */
+.social-proof{ position:fixed; left:20px; bottom:100px; background:#fff; padding:12px 16px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.15); font-size:13px; opacity:0; transition:.4s; z-index:9997; }
+/* FAQ */
+.faq-addon{ margin:60px auto; max-width:900px; background:#f8f9fb; padding:30px; border-radius:18px; }
+.faq-addon h2{margin-bottom:14px}
+.faq-addon p{margin-bottom:10px}
+/* PRICE ENHANCER (AMAN) */
+.old-price{text-decoration:line-through;color:#999;font-size:13px}
+.save{color:#25D366;font-size:12px;font-weight:600}
+</style>
+<script>
+/* SOCIAL PROOF LOOP */
+const messages=[
+"Seseorang baru saja memesan Joki Tugas",
+"Seseorang memesan Paket Video + PPT",
+"Order baru untuk Poster",
+"Pesanan masuk untuk Editing Video"
+];
+let i=0;
+setInterval(()=>{
+const box=document.getElementById("socialProof");
+box.innerText=messages[i%messages.length];
+box.style.opacity=1;
+setTimeout(()=>box.style.opacity=0,4000);
+i++;
+},6000);
+</script>
 </body>
 </html>
