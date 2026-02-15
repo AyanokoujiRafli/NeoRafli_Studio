@@ -3,281 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NeoRafli Studio — Order</title>
-<meta name="description" content="Neo Rafli Studio menyediakan jasa editing video, PPT, poster, dan joki tugas. Order mudah via WhatsApp.">
+<title>NeoRafli Studio - Pembayaran</title>
 <link rel="icon" href="logo.jpeg">
-
 <style>
 /* ===== Reset & Basic ===== */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
-body { background: #f2f4f8; color:#222; scroll-behavior:smooth; animation:pageFade .6s ease; }
-a { text-decoration:none; color:inherit; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Arial, sans-serif;}
+body{background:#f2f4f8;color:#222;scroll-behavior:smooth;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:900px;margin:50px auto;padding:20px;}
+header{text-align:center;margin-bottom:40px;}
+header img{width:90px;height:90px;border-radius:50%;object-fit:cover;}
+header h1{font-size:28px;margin:10px 0;}
+.header-sub{color:#666;font-size:14px;}
 
-/* ===== Header ===== */
-header { text-align:center; padding:30px 20px; }
-header .logo { width:90px; height:90px; border-radius:50%; object-fit:cover; margin-bottom:15px; box-shadow:0 8px 20px rgba(0,0,0,0.15);}
-header h1 { font-size:28px; margin-bottom:6px;}
-header .subtitle { font-size:14px; color:#666; }
-
-/* ===== Grid Produk ===== */
-.section-title { text-align:center; font-size:22px; margin:50px 0 25px; }
-.products { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; max-width:1100px; margin:30px auto; }
-
-/* ===== Kartu Produk ===== */
-.product-card { background:#fff; border-radius:18px; padding:25px; box-shadow:0 12px 30px rgba(0,0,0,0.08); position:relative; text-align:center; transition:all 0.35s ease; cursor:pointer; }
-.product-card:hover { transform:translateY(-10px); box-shadow:0 22px 45px rgba(0,0,0,0.15);}
-.product-card .badge{ position:absolute; top:18px; right:18px; background:#ff9800; color:#fff; padding:5px 12px; font-size:12px; border-radius:20px;}
-.product-card h3 { margin-top:0; }
-.product-card .desc { font-size:14px; color:#555; margin:10px 0 18px; }
-.product-card .price { font-size:20px; font-weight:700; color:#25D366; margin-bottom:18px; }
-.product-card button{ width:100%; padding:14px; border:none; border-radius:12px; background:#25D366; color:#fff; font-size:16px; font-weight:600; cursor:pointer; transition:all 0.25s ease; }
-.product-card button:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,211,102,0.45); }
+/* ===== Produk Card ===== */
+.product-card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,0.08);transition:all 0.3s;cursor:pointer;text-align:center;}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(0,0,0,0.15);}
+.product-card img{width:60px;margin-bottom:10px;}
+.product-card h3{margin:10px 0;}
+.product-card p{font-weight:700;color:#25D366;}
 
 /* ===== Modal ===== */
-.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000; }
-.modal.active { display:flex; animation:fadeIn 0.3s; }
-.modal-content { background:#fff; padding:30px; border-radius:15px; width:90%; max-width:500px; position:relative; animation:slideDown 0.3s; }
-.modal-content h2 { margin-bottom:15px; color:#25D366; text-align:center; }
-.modal-content label { display:block; margin:10px 0 5px; }
-.modal-content input, .modal-content select { width:100%; padding:10px; border-radius:10px; border:1px solid #ccc; }
-.modal-content button { background:#25D366; color:#fff; border:none; padding:12px 20px; margin-top:15px; border-radius:10px; cursor:pointer; transition:0.3s; }
-.modal-content button:hover { background:#1ebe5a; }
-.modal-content #cancelOrder { background:#ff4b4b; }
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:1000;}
+.modal.active{display:flex;animation:fadeIn 0.4s;}
+.modal-content{background:#fff;padding:30px;border-radius:18px;width:90%;max-width:500px;position:relative;animation:slideDown 0.4s;}
+.modal-content h2{text-align:center;color:#25D366;margin-bottom:20px;}
+.modal-content label{display:block;margin:10px 0 5px;}
+.modal-content input, .modal-content select{width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;margin-bottom:10px;}
+.modal-content button{background:#25D366;color:#fff;border:none;padding:12px 20px;margin-top:10px;border-radius:12px;cursor:pointer;font-weight:600;transition:0.3s;width:100%;}
+.modal-content button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,0.45);}
+.modal-content #cancelBtn{background:#ff4b4b;}
+
+/* ===== E-Wallet Logos ===== */
+.ewallets{display:flex;justify-content:space-around;margin:15px 0;}
+.ewallets img{width:60px;height:60px;cursor:pointer;transition:0.3s;}
+.ewallets img:hover{transform:scale(1.1);}
 
 /* ===== Countdown ===== */
-.countdown { font-size:1.2rem; color:#ff4b4b; margin:10px 0; text-align:center; transition:color 0.3s; }
-
-/* ===== Floating WA ===== */
-.wa-float{ position:fixed; bottom:22px; right:22px; width:56px;height:56px; background:#25D366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 12px 28px rgba(37,211,102,.45); z-index:9999; animation:pulse 1.8s infinite; cursor:pointer;}
-.wa-float:hover { transform:scale(1.1); transition:0.3s; }
-
-/* ===== Sticky Mobile Order ===== */
-.sticky-order{ position:fixed; bottom:0;left:0; width:100%; background:#25D366; color:#fff; text-align:center; padding:14px; font-weight:700; text-decoration:none; z-index:9998; }
-@media(min-width:768px){ .sticky-order{display:none;} }
-
-/* ===== Social Proof ===== */
-.social-proof{ position:fixed; left:20px; bottom:100px; background:#fff; padding:12px 16px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.15); font-size:13px; opacity:0; transition:.4s; z-index:9997; }
+#countdown{font-size:16px;color:#ff4b4b;text-align:center;margin:10px 0;transition:color 0.3s;}
 
 /* ===== Animasi ===== */
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-@keyframes slideDown { from {transform:translateY(-30px); opacity:0;} to {transform:translateY(0); opacity:1;} }
-@keyframes confetti { 0% {transform:rotate(0deg); opacity:1;} 100% {transform:rotate(360deg); opacity:0;} }
-.confetti { position:absolute; width:10px; height:10px; background:#ff4b4b; top:0; left:50%; animation:confetti 1s linear forwards; border-radius:50%; }
-
-/* ===== FAQ PREMIUM ===== */
-.faq-premium{ max-width:900px; margin:70px auto; padding:0 20px; }
-.faq-premium h2{ text-align:center; margin-bottom:30px; }
-.faq-item{ background:#fff; border-radius:16px; margin-bottom:14px; box-shadow:0 8px 30px rgba(0,0,0,0.08); overflow:hidden; transition:transform .2s ease; }
-.faq-item:hover{ transform:translateY(-2px); }
-.faq-question{ width:100%; background:none; border:none; padding:18px 22px; font-size:15px; font-weight:600; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
-.faq-question span{ font-size:22px; transition:transform .3s ease; }
-.faq-answer{ max-height:0; overflow:hidden; padding:0 22px; font-size:14px; color:#555; transition:max-height .4s ease, padding .3s ease; }
-.faq-item.active .faq-answer{ max-height:200px; padding:0 22px 18px; }
-.faq-item.active .faq-question span{ transform:rotate(45deg); }
-
-/* Page Fade */
-@keyframes pageFade{from{opacity:0}to{opacity:1}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes slideDown{from{transform:translateY(-30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
 </style>
 </head>
 <body>
 
-<header>
-  <img src="logo.jpeg" class="logo" alt="Neo Rafli Studio">
-  <h1>Neo Rafli Studio</h1>
-  <p class="subtitle">Jasa Digital • Cepat • Terjangkau • Profesional</p>
-</header>
+<div class="container">
+  <header>
+    <img src="logo.jpeg" alt="NeoRafli Studio">
+    <h1>NeoRafli Studio</h1>
+    <p class="header-sub">Premium Payment • Upload Bukti Transfer</p>
+  </header>
 
-<h2 class="section-title">Daftar Jasa</h2>
-<section class="products">
+  <!-- Produk -->
   <div class="product-card" data-name="Edit Video" data-price="20000">
+    <img src="logo.jpeg" alt="Edit Video">
     <h3>Edit Video</h3>
-    <p class="desc">Editing video rapi dan profesional.</p>
-    <p class="price">Rp20.000</p>
-    <button type="button">Pesan</button>
+    <p>Rp20.000</p>
   </div>
-
   <div class="product-card" data-name="PPT Presentasi" data-price="20000">
+    <img src="logo.jpeg" alt="PPT Presentasi">
     <h3>PPT Presentasi</h3>
-    <p class="desc">Desain PPT menarik dan enak dilihat.</p>
-    <p class="price">Rp20.000</p>
-    <button type="button">Pesan</button>
+    <p>Rp20.000</p>
   </div>
-
   <div class="product-card" data-name="Joki Tugas" data-price="15000">
+    <img src="logo.jpeg" alt="Joki Tugas">
     <h3>Joki Tugas</h3>
-    <p class="desc">Bantu tugas cepat dan sesuai kebutuhan.</p>
-    <p class="price">Rp15.000</p>
-    <button type="button">Pesan</button>
+    <p>Rp15.000</p>
   </div>
-
   <div class="product-card" data-name="Poster / Desain" data-price="10000">
+    <img src="logo.jpeg" alt="Poster / Desain">
     <h3>Poster / Desain</h3>
-    <p class="desc">Poster simpel, bersih, dan menarik.</p>
-    <p class="price">Rp10.000</p>
-    <button type="button">Pesan</button>
+    <p>Rp10.000</p>
   </div>
-</section>
+</div>
 
-<h2 class="section-title">Paket Hemat 🔥</h2>
-<section class="products">
-  <div class="product-card" data-name="Paket Video + PPT" data-price="35000">
-    <span class="badge">Hemat 5K</span>
-    <h3>Video + PPT</h3>
-    <p class="desc">Paket combo paling laris.</p>
-    <p class="price">Rp35.000</p>
-    <button type="button">Pesan</button>
-  </div>
-
-  <div class="product-card" data-name="Paket Video + PPT + Joki" data-price="45000">
-    <span class="badge">Hemat 10K</span>
-    <h3>Video + PPT + Joki</h3>
-    <p class="desc">Solusi lengkap tugas & konten.</p>
-    <p class="price">Rp45.000</p>
-    <button type="button">Pesan</button>
-  </div>
-
-  <div class="product-card" data-name="Paket Poster + Joki" data-price="20000">
-    <span class="badge">Hemat 5K</span>
-    <h3>Poster + Joki</h3>
-    <p class="desc">Desain dan tugas dalam satu paket.</p>
-    <p class="price">Rp20.000</p>
-    <button type="button">Pesan</button>
-  </div>
-</section>
-
-<!-- Modal Order -->
-<div class="modal" id="orderModal">
+<!-- Modal Upload Bukti TF -->
+<div class="modal" id="paymentModal">
   <div class="modal-content">
-    <h2>Form Order</h2>
+    <h2>Upload Bukti Transfer</h2>
     <label>Produk</label>
     <input type="text" id="productName" readonly>
     <label>Harga</label>
     <input type="text" id="productPrice" readonly>
-    <label>Nama Kamu</label>
-    <input type="text" id="customerName" placeholder="Masukkan nama">
-    <label>Metode Pembayaran</label>
-    <select id="paymentMethod">
-      <option value="">Pilih Metode</option>
-      <option value="COD">COD</option>
-      <option value="TF">Transfer Dana</option>
-    </select>
-    <div class="countdown" id="countdown"></div>
-    <button id="submitOrder">Submit Order</button>
-    <button id="cancelOrder">Cancel</button>
+    <label>Pilih E-Wallet</label>
+    <div class="ewallets">
+      <img src="dana.png" alt="Dana" data-method="Dana">
+      <img src="gopay.png" alt="GoPay" data-method="GoPay">
+      <img src="ovo.png" alt="OVO" data-method="OVO">
+    </div>
+    <label>Upload Foto Bukti TF</label>
+    <input type="file" id="buktiTF" accept="image/*">
+    <div id="countdown"></div>
+    <button id="confirmBtn">Konfirmasi & Kirim ke WA</button>
+    <button id="cancelBtn">Cancel</button>
   </div>
 </div>
 
-<!-- Floating WA & Sticky Order -->
-<a href="https://wa.me/6287875164038" class="wa-float" target="_blank">💬</a>
-<a href="#produk" class="sticky-order">Pesan Sekarang</a>
-
-<!-- Social Proof -->
-<div class="social-proof" id="socialProof">Seseorang baru saja memesan Joki Tugas</div>
-
-<!-- FAQ -->
-<section class="faq-premium">
-  <h2>Pertanyaan Umum</h2>
-  <div class="faq-item">
-    <button class="faq-question">Revisi berapa kali?<span>+</span></button>
-    <div class="faq-answer">Gratis 1x revisi untuk setiap order. Revisi tambahan bisa dibicarakan dengan admin.</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question">Sistem pembayarannya bagaimana?<span>+</span></button>
-    <div class="faq-answer">Pembayaran dilakukan di awal (DP / full) sebelum pengerjaan dimulai.</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question">Kalau deadline mepet bisa?<span>+</span></button>
-    <div class="faq-answer">Bisa. Silakan langsung chat admin melalui WhatsApp untuk konfirmasi ketersediaan.</div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question">File dikirim lewat apa?<span>+</span></button>
-    <div class="faq-answer">File final akan dikirim melalui Google Drive / WhatsApp sesuai kebutuhan.</div>
-  </div>
-</section>
-
 <script>
-/* ===== Order Modal ===== */
-const products = document.querySelectorAll('.product-card');
-const modal = document.getElementById('orderModal');
+const productCards = document.querySelectorAll('.product-card');
+const modal = document.getElementById('paymentModal');
 const productNameInput = document.getElementById('productName');
 const productPriceInput = document.getElementById('productPrice');
-const paymentMethod = document.getElementById('paymentMethod');
+const confirmBtn = document.getElementById('confirmBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const buktiTF = document.getElementById('buktiTF');
 const countdownEl = document.getElementById('countdown');
-const submitBtn = document.getElementById('submitOrder');
-const cancelBtn = document.getElementById('cancelOrder');
 let countdownInterval;
+let selectedMethod = '';
 
-products.forEach(p => {
-  p.querySelector('button').addEventListener('click', () => {
+// Pilih produk
+productCards.forEach(p => {
+  p.addEventListener('click', ()=>{
     productNameInput.value = p.dataset.name;
     productPriceInput.value = p.dataset.price;
-    paymentMethod.value = '';
-    countdownEl.textContent = '';
     modal.classList.add('active');
-    window.scrollTo({ top:0, behavior:'smooth' });
   });
 });
 
-paymentMethod.addEventListener('change', () => {
-  if(paymentMethod.value === 'TF') {
-    let timeLeft = 10*60;
-    countdownEl.textContent = `Waktu pembayaran: 10:00`;
-    countdownEl.style.color = '#ff4b4b';
-    clearInterval(countdownInterval);
-    countdownInterval = setInterval(()=>{
-      let minutes = Math.floor(timeLeft/60);
-      let seconds = timeLeft%60;
-      countdownEl.textContent = `Waktu pembayaran: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-      if(timeLeft<=60) countdownEl.style.color='#ff9900';
-      timeLeft--;
-      if(timeLeft<0){ clearInterval(countdownInterval); alert('⚠️ Waktu pembayaran habis. Order dibatalkan.'); modal.classList.remove('active'); }
-    },1000);
-  } else { clearInterval(countdownInterval); countdownEl.textContent=''; }
+// Pilih E-wallet
+document.querySelectorAll('.ewallets img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    selectedMethod = img.dataset.method;
+    alert('Metode pembayaran: '+selectedMethod+' dipilih. Silakan upload bukti TF.');
+  });
 });
 
-submitBtn.addEventListener('click', () => {
-  if(!paymentMethod.value){ alert('Pilih metode pembayaran dulu!'); return; }
-  const customer = document.getElementById('customerName').value || 'Customer';
-  alert(`✅ Terima kasih ${customer}!\nProduk: ${productNameInput.value}\nHarga: ${productPriceInput.value}\nMetode: ${paymentMethod.value}`);
-  for(let i=0;i<30;i++){
-    const confetti = document.createElement('div');
-    confetti.classList.add('confetti');
-    confetti.style.left=Math.random()*100+'%';
-    confetti.style.background=`hsl(${Math.random()*360},70%,50%)`;
-    document.body.appendChild(confetti);
-    setTimeout(()=>{confetti.remove()},1000);
-  }
+// Konfirmasi pembayaran
+confirmBtn.addEventListener('click',()=>{
+  if(!buktiTF.files.length){ alert('Upload bukti transfer dulu!'); return; }
+  if(!selectedMethod){ alert('Pilih metode e-wallet!'); return; }
+
+  // Mulai countdown 10 menit
+  let timeLeft = 10*60;
+  countdownEl.textContent = `Waktu pembayaran: 10:00`;
+  countdownEl.style.color = '#ff4b4b';
+
+  clearInterval(countdownInterval);
+  countdownInterval = setInterval(()=>{
+    let minutes = Math.floor(timeLeft/60);
+    let seconds = timeLeft % 60;
+    countdownEl.textContent = `Waktu pembayaran: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    if(timeLeft<=60) countdownEl.style.color='#ff9900';
+    timeLeft--;
+    if(timeLeft<0){ clearInterval(countdownInterval); alert('Waktu habis!'); modal.classList.remove('active'); }
+  },1000);
+
+  // Simulasi upload berhasil → langsung redirect ke WA
+  setTimeout(()=>{
+    const name = prompt('Masukkan nama Anda:','Customer');
+    const waURL = `https://wa.me/087875164038?text=${encodeURIComponent('Halo, saya sudah bayar:\nNama: '+name+'\nProduk: '+productNameInput.value+'\nHarga: '+productPriceInput.value+'\nMetode: '+selectedMethod)}`;
+    window.open(waURL,'_blank');
+    modal.classList.remove('active');
+    clearInterval(countdownInterval);
+  },2000);
+});
+
+// Cancel
+cancelBtn.addEventListener('click',()=>{
   modal.classList.remove('active');
   clearInterval(countdownInterval);
 });
-
-cancelBtn.addEventListener('click', () => { modal.classList.remove('active'); clearInterval(countdownInterval); });
-
-/* ===== FAQ Toggle ===== */
-document.querySelectorAll(".faq-question").forEach(btn=>{
-  btn.addEventListener("click",()=>{ btn.parentElement.classList.toggle("active"); });
-});
-
-/* ===== Social Proof Loop ===== */
-const messages=["Seseorang baru saja memesan Joki Tugas","Seseorang memesan Paket Video + PPT","Order baru untuk Poster","Pesanan masuk untuk Editing Video"];
-let i=0;
-setInterval(()=>{
-  const box=document.getElementById("socialProof");
-  box.innerText=messages[i%messages.length];
-  box.style.opacity=1;
-  setTimeout(()=>box.style.opacity=0,4000);
-  i++;
-},6000);
-
-/* ===== Scroll Reveal ===== */
-function revealOnScroll(){
-  document.querySelectorAll('.product-card, header, .section-title').forEach(el=>{
-    const top = el.getBoundingClientRect().top;
-    if(top<window.innerHeight-80) el.classList.add('active');
-  });
-}
-window.addEventListener('load', revealOnScroll);
-window.addEventListener('scroll', revealOnScroll);
 </script>
 
 </body>
